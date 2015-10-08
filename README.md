@@ -1,6 +1,6 @@
 ## Venmo account login for meteor
 
-##Install
+## Install
 
 `cd <your-meteor-project>`
 
@@ -11,7 +11,7 @@ and also add following package as pre-req -
 `meteor add service-configuration`
 
 
-##Setup and Usage
+## Setup and Usage
 1. Register your app with Venmo Developer Site at following url- https://venmo.com/account/settings/developer
 
 2. Fill out the given form but make sure that redirect url as shown as follows-
