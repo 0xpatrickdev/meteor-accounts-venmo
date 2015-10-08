@@ -1,5 +1,4 @@
-# Meteor Acccounts Venmo
-#### Venmo account login for meteor
+## Venmo account login for meteor
 
 ##Install
 
