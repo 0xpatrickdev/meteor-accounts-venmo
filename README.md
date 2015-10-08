@@ -22,7 +22,7 @@ and also add following package as pre-req -
   For e.g.redirect url for localhost : `http://localhost:3000/_oauth/venmo`
 
 3. After registration, note down the clientid and client secret.
-4. Add the following code to a `Meteor.startup` function on the server, inputting your clientId, secret, and any scopes you wish to use.  As of 10/8/15, the current scopes available are: `make_payments`, `access_payment_history`, `access_feed`, `access_profile`, `access_email`, `access_phone`, `access_balance`, `and access_friends`.  A full list is available here: https://developer.venmo.com/docs/authentication#scopes
+4. Add the following code to a `Meteor.startup` function on the server, inputting your clientId, secret, and any scopes you wish to use. A full list is available here: url- https://developer.venmo.com/docs/authentication#scopes
 
     ```
     ServiceConfiguration.configurations.remove({

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'pcooney10:accounts-venmo',
-  version: '1.0.0',
+  version: '0.1.0',
   // Brief, one-line summary of the package.
   summary: 'Venmo account login for Meteor',
   // URL to the Git repository containing the source code for this package.
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
-  api.versionsFrom("1.2.0");
+  api.versionsFrom("1.2.0.2");
   api.use('accounts-base', ['client', 'server']);
   api.imply('accounts-base', ['client', 'server']);
   api.use('accounts-oauth', ['client', 'server']);
