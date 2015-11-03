@@ -1,4 +1,5 @@
 ## Venmo account login for meteor
+Meteor-accounts-venmo was inspired by meteor-accounts-instagram located [here](https://github.com/yubozhao/meteor-accounts-instagram)
 
 ## Install
 
@@ -24,23 +25,32 @@ and also add following package as pre-req -
 4. Add the following code to a `Meteor.startup` function on the server, inputting your clientId, secret, and any scopes you wish to use. A full list is available here: url- https://developer.venmo.com/docs/authentication#scopes
 
     ```
-    ServiceConfiguration.configurations.remove({
+    ServiceConfiguration.configurations.upsert({
       service: "venmo"
-    });
-    ServiceConfiguration.configurations.insert({
-      service: "venmo",
-      clientId: "<clientId>",
-      scope: "<scop1e+scope2+...>",
-      secret: "<secret>"
+      }, {
+        $set {
+          clientId: "<clientId>",
+          scope: "<scop1e+scope2+...>",
+          secret: "<secret>"
+        }
     });
     ```
 
 5. The login method can now be exposed on the client with the following code:
 ```
-      Meteor.loginWithVenmo(function (err, res) {
-          if (err !== undefined)
-            console.log('sucess ' + res)
-          else
-            console.log('login failed ' + err)
+      Meteor.loginWithVenmo(function (err) {
+          if (err) {
+            throw new Meteor.Error("login-failed", 
+              "Authentication with Venmo failed");
+          }
+      });
+```
+6. And you can logout on the client with the following code:
+```
+      Meteor.logout(function(err){
+        if (err) {
+          throw new Meteor.Error("logout-failed",
+            "Log out failed");
+        }
       });
 ```
