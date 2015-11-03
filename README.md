@@ -37,20 +37,22 @@ and also add following package as pre-req -
     ```
 
 5. The login method can now be exposed on the client with the following code:
-```
-      Meteor.loginWithVenmo(function (err) {
-          if (err) {
-            throw new Meteor.Error("login-failed", 
-              "Authentication with Venmo failed");
-          }
-      });
-```
+
+    ```
+    Meteor.loginWithVenmo(function (err) {
+      if (err) {
+        throw new Meteor.Error("login-failed", 
+          "Authentication with Venmo failed");
+      }
+    });
+    ```
 6. And you can logout on the client with the following code:
-```
-      Meteor.logout(function(err){
-        if (err) {
-          throw new Meteor.Error("logout-failed",
-            "Log out failed");
-        }
-      });
-```
+
+    ```
+    Meteor.logout(function(err){
+      if (err) {
+        throw new Meteor.Error("logout-failed",
+          "Log out failed");
+      }
+    });
+    ```
